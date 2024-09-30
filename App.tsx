@@ -7,7 +7,6 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import change from './src/screens/testing';
 import Change from './src/screens/testing';
 
-
 const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
