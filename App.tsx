@@ -4,9 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './src/screens/Login';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import change from './src/screens/testing';
 import Change from './src/screens/testing';
-
+import SplashScreen from './src/screens/splashScreen';
 const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
@@ -25,7 +24,9 @@ function App(): React.JSX.Element {
       />
 
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='login2'>
+        <Stack.Navigator initialRouteName='splashScreen'>
+
+          <Stack.Screen name='splashScreen' component={SplashScreen} options={{ headerShown: false }} />
           <Stack.Screen name='login2' component={Login} options={{ headerShown: false }} />
           <Stack.Screen name='change' component={Change} options={{ headerShown: false }} />
 

@@ -19,8 +19,12 @@ export function Login({ navigation }: homeScreenprops) {
     const [message, setMessage] = useState<string>();
 
     const handleLoginClick = () => {
-        if (username && password)
-            navigation.navigate('change');
+        //API login 
+        if (username && password) {
+            const loginApiRes = true;
+            if (loginApiRes)
+                navigation.navigate('change');
+        }
         else {
             setMessage("please fill the required fields");
             setUsernameValidity(false);
@@ -35,9 +39,9 @@ export function Login({ navigation }: homeScreenprops) {
                 <Text style={{ marginHorizontal: 100, marginBottom: 100, fontSize: 40, fontWeight: "900" }}>Login Page</Text>
                 {message && <Text>{message} {JSON.stringify(usernameValidity)}</Text>}
                 {/* <TextInput style={[styles.textInput]} value={""} keyboardType='numeric' /> */}
-            
+
                 <TextField label='Email or Phone Number' isValidate={usernameValidity} keyboardType='numeric' placeholder='Phone Number' value={username} setValue={(text) => setUsername(text)}></TextField>
-            
+
 
                 <TextField label='Password' isValidate={passwordValidity} secureTextEntry={true} placeholder='Password' value={password} setValue={text => setPassword(text)}></TextField>
 
